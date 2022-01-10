@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition delay</title>
+    <style>
+        #wrapper {
+            width: 500px;
+            height: 150px;
+            margin: 0 auto;
+            border: 1px solid #aaa;
+            border-radius: 30px;
+            padding: 20px;
+
+        }
+        #wrapper:hover .box {
+            transform: rotate(720deg);
+            margin-left: 400px;
+        }
+
+        .box {
+            font-size: 12px;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+            background: #eee;
+        }
+
+        #no-delay {
+            transition: 3s;
+            /* transition-duration: 이런거 필요없음 transition이랑 똑같아서 duration 안써도 먹힘; */
+        }
+
+        #delay {
+            transition: 3s;
+            transition-delay: 1s;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="no-delay" class="box"><p>no-delay</p></div>
+        <div id="delay" class="box"><p>delay</p></div>
+    </div>
+</body>
+</html>

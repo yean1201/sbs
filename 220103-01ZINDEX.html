@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-INDEX</title>
+    <style>
+        #wrapper {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .box1 {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            background: red;
+            z-index: 1;
+        }
+
+        .box2 {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 80px;
+            left: 80px;
+            background: rgb(102,161,13);
+            z-index: 2;
+        }
+
+        .box3 {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 110px;
+            left: 110px;
+            background: blue;
+            z-index: 3;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모바일메뉴</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f1f1f1;
+        }
+
+        header {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 0 0 0 50px;
+            width: 250px;
+            min-height: 100%;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+
+        }
+
+        header .logo {
+            margin-top: 100px;
+        }
+
+        header .logo a {
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        ul {
+            margin-top: 50px;
+            list-style: none;
+            transition: 0.5s;
+        }
+
+        ul li {
+            margin-bottom: 20px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #555;
+        }
+
+        header .mobile_tab {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 28px 20px 0 0;
+            width: 40px;
+            height: 40px;
+            background: url(toggle_button.png) no-repeat;
+        }
+
+        header .mobile_tab.close {
+            background-position: -41px 0;
+        }
+
+        @media(max-width: 500px) {
+            header {
+                position: relative;
+                padding: 0;
+                width: 100%;
+                min-height: 80px;
+                display: block;
+            }
+            header .logo {
+                margin: 40px 0 0 30px;
+            }
+
+            header .mobile_tab {
+                display: block;
+            }
+
+            ul {
+                margin-top: 35px;
+                height: 0;
+            }
+            
+            ul li {
+                margin-bottom: 0;
+            }
+            
+            ul li a {
+                display: block;
+                padding: 25px;
+                padding-right: 0;
+                width: 100%;
+                text-align: left;
+                background: #fff;
+                color: #555;
+                border-top: 1px solid #d8d8d8;
+            }
+
+            header nav ul.show {
+                height: 335px;
+            }
+
+
+        }    
+    </style>
+    <script>
+        $(function() {
+            $(".mobile_tab").on("click", function() {
+                $("ul").toggleClass("show");
+                $(".mobile_tab").toggleClass("close");
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="contatiner">
+        <header>
+            <div class="logo">
+                <a href="#">반응형 웹 사이트 메뉴</a>
+            </div>
+            <a href="#" class="mobile_tab"></a>
+            <nav>
+                <ul>
+                    <li><a href="#">HTML5</a></li>
+                    <li><a href="#">CSS3</a></li>
+                    <li><a href="#">RESPONSIVE</a></li>
+                    <li><a href="#">JAVASCRIPT</a></li>
+                    <li><a href="#">JQUERY</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+</body>
+</html>
